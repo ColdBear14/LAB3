@@ -1,0 +1,2 @@
+control_7seg.c:10:6:display7SEGA	16	static
+control_7seg.c:68:6:display7SEGB	16	static

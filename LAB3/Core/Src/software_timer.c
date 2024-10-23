@@ -5,6 +5,7 @@
  *      Author: Hy
  */
 #include "software_timer.h"
+#include "stdint.h"
 
 #define TICK 10
 
