@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  0001629d  00000000  00000000  0002ad48  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00009890  00000000  00000000  00040fe5  2**0
+ 17 .debug_line   0000988e  00000000  00000000  00040fe5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00081eee  00000000  00000000  0004a875  2**0
+ 18 .debug_str    00081eee  00000000  00000000  0004a873  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cc763  2**0
+ 19 .comment      00000053  00000000  00000000  000cc761  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002624  00000000  00000000  000cc7b8  2**2
+ 20 .debug_frame  00002624  00000000  00000000  000cc7b4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -525,32 +525,31 @@ void timerun() {
  80003a6:	2300      	movs	r3, #0
  80003a8:	607b      	str	r3, [r7, #4]
  80003aa:	e01c      	b.n	80003e6 <timerun+0x46>
-		if (timer_counter[i] <= 0) {
+		if (timer_counter[i] >= 0) {
  80003ac:	4a12      	ldr	r2, [pc, #72]	; (80003f8 <timerun+0x58>)
  80003ae:	687b      	ldr	r3, [r7, #4]
  80003b0:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
  80003b4:	2b00      	cmp	r3, #0
- 80003b6:	dc04      	bgt.n	80003c2 <timerun+0x22>
-			timer_flag[i] = 1;
- 80003b8:	4a10      	ldr	r2, [pc, #64]	; (80003fc <timerun+0x5c>)
- 80003ba:	687b      	ldr	r3, [r7, #4]
- 80003bc:	2101      	movs	r1, #1
- 80003be:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
-		}
-		if (timer_counter[i] > 0) {
- 80003c2:	4a0d      	ldr	r2, [pc, #52]	; (80003f8 <timerun+0x58>)
- 80003c4:	687b      	ldr	r3, [r7, #4]
- 80003c6:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 80003ca:	2b00      	cmp	r3, #0
- 80003cc:	dd08      	ble.n	80003e0 <timerun+0x40>
+ 80003b6:	db13      	blt.n	80003e0 <timerun+0x40>
 			timer_counter[i]--;
- 80003ce:	4a0a      	ldr	r2, [pc, #40]	; (80003f8 <timerun+0x58>)
- 80003d0:	687b      	ldr	r3, [r7, #4]
- 80003d2:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 80003d6:	1e5a      	subs	r2, r3, #1
- 80003d8:	4907      	ldr	r1, [pc, #28]	; (80003f8 <timerun+0x58>)
- 80003da:	687b      	ldr	r3, [r7, #4]
- 80003dc:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+ 80003b8:	4a0f      	ldr	r2, [pc, #60]	; (80003f8 <timerun+0x58>)
+ 80003ba:	687b      	ldr	r3, [r7, #4]
+ 80003bc:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80003c0:	1e5a      	subs	r2, r3, #1
+ 80003c2:	490d      	ldr	r1, [pc, #52]	; (80003f8 <timerun+0x58>)
+ 80003c4:	687b      	ldr	r3, [r7, #4]
+ 80003c6:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+			if(timer_counter[i] <= 0){
+ 80003ca:	4a0b      	ldr	r2, [pc, #44]	; (80003f8 <timerun+0x58>)
+ 80003cc:	687b      	ldr	r3, [r7, #4]
+ 80003ce:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80003d2:	2b00      	cmp	r3, #0
+ 80003d4:	dc04      	bgt.n	80003e0 <timerun+0x40>
+				timer_flag[i] = 1;
+ 80003d6:	4a09      	ldr	r2, [pc, #36]	; (80003fc <timerun+0x5c>)
+ 80003d8:	687b      	ldr	r3, [r7, #4]
+ 80003da:	2101      	movs	r1, #1
+ 80003dc:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
 	for (int i = 0; i < 10; i++) {
  80003e0:	687b      	ldr	r3, [r7, #4]
  80003e2:	3301      	adds	r3, #1
@@ -558,6 +557,7 @@ void timerun() {
  80003e6:	687b      	ldr	r3, [r7, #4]
  80003e8:	2b09      	cmp	r3, #9
  80003ea:	dddf      	ble.n	80003ac <timerun+0xc>
+			}
 		}
 	}
 }

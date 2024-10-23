@@ -18,11 +18,11 @@ void setTimer(int index, int counter) {
 
 void timerun() {
 	for (int i = 0; i < 10; i++) {
-		if (timer_counter[i] <= 0) {
-			timer_flag[i] = 1;
-		}
-		if (timer_counter[i] > 0) {
+		if (timer_counter[i] >= 0) {
 			timer_counter[i]--;
+			if(timer_counter[i] <= 0){
+				timer_flag[i] = 1;
+			}
 		}
 	}
 }
