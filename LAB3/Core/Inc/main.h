@@ -32,7 +32,14 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "software_timer.h"
+#include "control_7seg.h"
+#include "control_traffic.h"
+#include "button.h"
+#include "fsm_automatic.h"
+#include "timer_check.h"
+#include "update_status_traffic.h"
+#include "fsm_manual.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

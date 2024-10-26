@@ -9,6 +9,7 @@ C_SRCS += \
 ../Core/Src/control_7seg.c \
 ../Core/Src/control_traffic.c \
 ../Core/Src/fsm_automatic.c \
+../Core/Src/fsm_manual.c \
 ../Core/Src/global.c \
 ../Core/Src/main.c \
 ../Core/Src/software_timer.c \
@@ -17,13 +18,15 @@ C_SRCS += \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f1xx.c \
-../Core/Src/timer_check.c 
+../Core/Src/timer_check.c \
+../Core/Src/update_status_traffic.c 
 
 OBJS += \
 ./Core/Src/button.o \
 ./Core/Src/control_7seg.o \
 ./Core/Src/control_traffic.o \
 ./Core/Src/fsm_automatic.o \
+./Core/Src/fsm_manual.o \
 ./Core/Src/global.o \
 ./Core/Src/main.o \
 ./Core/Src/software_timer.o \
@@ -32,13 +35,15 @@ OBJS += \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f1xx.o \
-./Core/Src/timer_check.o 
+./Core/Src/timer_check.o \
+./Core/Src/update_status_traffic.o 
 
 C_DEPS += \
 ./Core/Src/button.d \
 ./Core/Src/control_7seg.d \
 ./Core/Src/control_traffic.d \
 ./Core/Src/fsm_automatic.d \
+./Core/Src/fsm_manual.d \
 ./Core/Src/global.d \
 ./Core/Src/main.d \
 ./Core/Src/software_timer.d \
@@ -47,7 +52,8 @@ C_DEPS += \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f1xx.d \
-./Core/Src/timer_check.d 
+./Core/Src/timer_check.d \
+./Core/Src/update_status_traffic.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -14,10 +14,19 @@ int KeyReg3[5] = {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE,NORMAL_STATE,NORMAL_STA
 int TimerForKeyPress[5] = {200,200,200,200,200};
 
 int button_flag[5];
+int button_LongPress_flag[5];
 
 int IsButtonPress(int index) {
 	if (button_flag[index] == 1) {
 		button_flag[index] = 0;
+		return 1;
+	}
+	return 0;
+}
+
+int IsButtonLongPress(int index) {
+	if (button_LongPress_flag[index] == 1) {
+		button_LongPress_flag[index] = 0;
 		return 1;
 	}
 	return 0;
@@ -60,7 +69,7 @@ void getKeyInput() {
 				if (KeyReg2[i] == PRESS_STATE) {
 					//todo
 					subKeyProcess(i);
-					TimerForKeyPress[i] = 200;
+					TimerForKeyPress[i] = 300;
 
 				}
 			} else {

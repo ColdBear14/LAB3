@@ -22,12 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "software_timer.h"
-#include "control_7seg.h"
-#include "control_traffic.h"
-#include "button.h"
-#include "fsm_automatic.h"
-#include "timer_check.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -109,6 +103,7 @@ int main(void)
     /* USER CODE END WHILE */
 	  timer_check();
 	  fsm_automatic_run();
+	  fsm_manual_run();
 	  /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
