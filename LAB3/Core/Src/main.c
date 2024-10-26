@@ -26,6 +26,8 @@
 #include "control_7seg.h"
 #include "control_traffic.h"
 #include "button.h"
+#include "fsm_automatic.h"
+#include "timer_check.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,18 +100,16 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+  status = INIT;
+  status_B= INIT;
   setTimer(0,1000);
-  setTimer(1,1000);
+
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(IsButtonPress(0) == 1){
-		  HAL_GPIO_TogglePin(GPIOA, PA4_Pin);
-	  }
-	  if(IsButtonPress(2) == 1){
-		  HAL_GPIO_TogglePin(GPIOA, PA4_Pin);
-	  }
-    /* USER CODE BEGIN 3 */
+	  timer_check();
+	  fsm_automatic_run();
+	  /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -210,7 +210,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
-                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin, GPIO_PIN_RESET);
+                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin
+                          |PA13_Pin|PA14_Pin|PA15_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, PB0_Pin|PB1_Pin|PB2_Pin|PB10_Pin
@@ -231,9 +232,11 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA3_Pin PA4_Pin PA5_Pin PA6_Pin
-                           PA7_Pin PA8_Pin PA9_Pin PA10_Pin */
+                           PA7_Pin PA8_Pin PA9_Pin PA10_Pin
+                           PA13_Pin PA14_Pin PA15_Pin */
   GPIO_InitStruct.Pin = PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
-                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin;
+                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin
+                          |PA13_Pin|PA14_Pin|PA15_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
