@@ -16,17 +16,15 @@ extern int status_RED_A;
 extern int status_YELLOW_A;
 extern int status_GREEN_A;
 
-int status_RED_B;
-int status_YELLOW_B;
-int status_GREEN_B;
+extern int status_RED_B;
+extern int status_YELLOW_B;
+extern int status_GREEN_B;
 
-int count_RED_B;
-int count_YELLOW_B;
-int count_GREEN_B;
+extern int count_RED_B;
+extern int count_YELLOW_B;
+extern int count_GREEN_B;
 
-void clearLED();
-extern void displayTrafficA();
-extern void displayTrafficB();
+extern void displayTraffic();
 extern void updateTraffic();
 
 #endif /* INC_CONTROL_TRAFFIC_H_ */

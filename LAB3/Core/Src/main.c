@@ -25,6 +25,7 @@
 #include "software_timer.h"
 #include "control_7seg.h"
 #include "control_traffic.h"
+#include "button.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,14 +103,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(timer_flag[0] == 1){
+	  if(IsButtonPress(0) == 1){
 		  HAL_GPIO_TogglePin(GPIOA, PA4_Pin);
-		  setTimer(0,1000);
-	 }
-	  if(timer_flag[1] == 1){
-	  		  updateTraffic();
-	  		  setTimer(1,1000);
-	  	  }
+	  }
+	  if(IsButtonPress(2) == 1){
+		  HAL_GPIO_TogglePin(GPIOA, PA4_Pin);
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -210,9 +209,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, PA1_Pin|PA2_Pin|PA3_Pin|PA4_Pin
-                          |PA5_Pin|PA6_Pin|PA7_Pin|PA8_Pin
-                          |PA9_Pin|PA10_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
+                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, PB0_Pin|PB1_Pin|PB2_Pin|PB10_Pin
@@ -220,24 +218,22 @@ static void MX_GPIO_Init(void)
                           |PB4_Pin|PB5_Pin|PB6_Pin|PB7_Pin
                           |PB8_Pin|PB9_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : BUTTON1_Pin */
-  GPIO_InitStruct.Pin = BUTTON1_Pin;
+  /*Configure GPIO pin : BUTTON0_Pin */
+  GPIO_InitStruct.Pin = BUTTON0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(BUTTON1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(BUTTON0_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PA0_Pin */
-  GPIO_InitStruct.Pin = PA0_Pin;
+  /*Configure GPIO pins : BUTTON1_Pin BUTTON2_Pin BUTTON3_Pin */
+  GPIO_InitStruct.Pin = BUTTON1_Pin|BUTTON2_Pin|BUTTON3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(PA0_GPIO_Port, &GPIO_InitStruct);
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA1_Pin PA2_Pin PA3_Pin PA4_Pin
-                           PA5_Pin PA6_Pin PA7_Pin PA8_Pin
-                           PA9_Pin PA10_Pin */
-  GPIO_InitStruct.Pin = PA1_Pin|PA2_Pin|PA3_Pin|PA4_Pin
-                          |PA5_Pin|PA6_Pin|PA7_Pin|PA8_Pin
-                          |PA9_Pin|PA10_Pin;
+  /*Configure GPIO pins : PA3_Pin PA4_Pin PA5_Pin PA6_Pin
+                           PA7_Pin PA8_Pin PA9_Pin PA10_Pin */
+  GPIO_InitStruct.Pin = PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
+                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -262,6 +258,7 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
 	timerun();
+	getKeyInput();
 }
 /* USER CODE END 4 */
 

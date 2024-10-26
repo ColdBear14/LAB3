@@ -1,3 +1,4 @@
+"./Core/Src/button.o"
 "./Core/Src/control_7seg.o"
 "./Core/Src/control_traffic.o"
 "./Core/Src/main.o"
