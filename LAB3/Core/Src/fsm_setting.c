@@ -23,20 +23,18 @@ void fsm_mode(){
 	countPressButton1();
 	switch(status_mode){
 	case MODE1:
-		status = INIT;
-		status_B = INIT;
 		break;
 	case MODE2:
-		status = MAN_RED;
-		status = MAN_GREEN;
+		status_A = MAN_RED;
+		status_B = MAN_GREEN;
 		break;
 	case MODE3:
-		status = MAN_YELLOW;
-		status = MAN_RED;
+		status_A = MAN_YELLOW;
+		status_B = MAN_RED;
 		break;
 	case MODE4:
-		status = MAN_GREEN;
-		status = MAN_RED;
+		status_A = MAN_GREEN;
+		status_B = MAN_RED;
 		break;
 	default:
 		break;

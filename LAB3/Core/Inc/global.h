@@ -26,7 +26,7 @@
 #define MODE3 23
 #define MODE4 24
 
-extern int status;
+extern int status_A;
 extern int status_B;
 extern int status_mode;
 

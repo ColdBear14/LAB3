@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020078  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00009a32  00000000  00000000  000200a1  2**0
+ 12 .debug_info   00009b64  00000000  00000000  000200a1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001bf8  00000000  00000000  00029ad3  2**0
+ 13 .debug_abbrev 00001bf8  00000000  00000000  00029c05  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000a48  00000000  00000000  0002b6d0  2**3
+ 14 .debug_aranges 00000a48  00000000  00000000  0002b800  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000928  00000000  00000000  0002c118  2**3
+ 15 .debug_ranges 00000928  00000000  00000000  0002c248  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000171ef  00000000  00000000  0002ca40  2**0
+ 16 .debug_macro  000172a5  00000000  00000000  0002cb70  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000cdbc  00000000  00000000  00043c2f  2**0
+ 17 .debug_line   0000cf09  00000000  00000000  00043e15  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000825eb  00000000  00000000  000509eb  2**0
+ 18 .debug_str    00082618  00000000  00000000  00050d1e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000d2fd6  2**0
+ 19 .comment      00000053  00000000  00000000  000d3336  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002800  00000000  00000000  000d302c  2**2
+ 20 .debug_frame  00002800  00000000  00000000  000d338c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -480,17 +480,17 @@ void displayTraffic() {
  8000420:	20000068 	.word	0x20000068
 
 08000424 <fsm_automatic_run_A>:
-int count_RED = 500;
-int count_GREEN = 300;
-int count_YELLOW = 200;
+ *      Author: Hy
+ */
 
+#include "fsm_automatic.h"
 
 void fsm_automatic_run_A(){
  8000424:	b580      	push	{r7, lr}
  8000426:	af00      	add	r7, sp, #0
 	status_LED_A();
  8000428:	f000 fb0e 	bl	8000a48 <status_LED_A>
-	switch (status) {
+	switch (status_A) {
  800042c:	4b3c      	ldr	r3, [pc, #240]	; (8000520 <fsm_automatic_run_A+0xfc>)
  800042e:	681b      	ldr	r3, [r3, #0]
  8000430:	3b01      	subs	r3, #1
@@ -503,7 +503,7 @@ void fsm_automatic_run_A(){
  8000444:	080004d3 	.word	0x080004d3
  8000448:	08000499 	.word	0x08000499
 		case INIT:
-			status = AUTO_RED;
+			status_A = AUTO_RED;
  800044c:	4b34      	ldr	r3, [pc, #208]	; (8000520 <fsm_automatic_run_A+0xfc>)
  800044e:	2202      	movs	r2, #2
  8000450:	601a      	str	r2, [r3, #0]
@@ -522,7 +522,7 @@ void fsm_automatic_run_A(){
  8000464:	685b      	ldr	r3, [r3, #4]
  8000466:	2b01      	cmp	r3, #1
  8000468:	d107      	bne.n	800047a <fsm_automatic_run_A+0x56>
-				status = AUTO_GREEN;
+				status_A = AUTO_GREEN;
  800046a:	4b2d      	ldr	r3, [pc, #180]	; (8000520 <fsm_automatic_run_A+0xfc>)
  800046c:	2204      	movs	r2, #4
  800046e:	601a      	str	r2, [r3, #0]
@@ -537,7 +537,7 @@ void fsm_automatic_run_A(){
  8000480:	4603      	mov	r3, r0
  8000482:	2b01      	cmp	r3, #1
  8000484:	d144      	bne.n	8000510 <fsm_automatic_run_A+0xec>
-				status = MAN_RED;
+				status_A = MAN_RED;
  8000486:	4b26      	ldr	r3, [pc, #152]	; (8000520 <fsm_automatic_run_A+0xfc>)
  8000488:	220c      	movs	r2, #12
  800048a:	601a      	str	r2, [r3, #0]
@@ -556,7 +556,7 @@ void fsm_automatic_run_A(){
  800049e:	685b      	ldr	r3, [r3, #4]
  80004a0:	2b01      	cmp	r3, #1
  80004a2:	d107      	bne.n	80004b4 <fsm_automatic_run_A+0x90>
-				status = AUTO_YELLOW;
+				status_A = AUTO_YELLOW;
  80004a4:	4b1e      	ldr	r3, [pc, #120]	; (8000520 <fsm_automatic_run_A+0xfc>)
  80004a6:	2203      	movs	r2, #3
  80004a8:	601a      	str	r2, [r3, #0]
@@ -571,7 +571,7 @@ void fsm_automatic_run_A(){
  80004ba:	4603      	mov	r3, r0
  80004bc:	2b01      	cmp	r3, #1
  80004be:	d129      	bne.n	8000514 <fsm_automatic_run_A+0xf0>
-				status = MAN_GREEN;
+				status_A = MAN_GREEN;
  80004c0:	4b17      	ldr	r3, [pc, #92]	; (8000520 <fsm_automatic_run_A+0xfc>)
  80004c2:	220e      	movs	r2, #14
  80004c4:	601a      	str	r2, [r3, #0]
@@ -590,7 +590,7 @@ void fsm_automatic_run_A(){
  80004d8:	685b      	ldr	r3, [r3, #4]
  80004da:	2b01      	cmp	r3, #1
  80004dc:	d107      	bne.n	80004ee <fsm_automatic_run_A+0xca>
-				status = AUTO_RED;
+				status_A = AUTO_RED;
  80004de:	4b10      	ldr	r3, [pc, #64]	; (8000520 <fsm_automatic_run_A+0xfc>)
  80004e0:	2202      	movs	r2, #2
  80004e2:	601a      	str	r2, [r3, #0]
@@ -605,7 +605,7 @@ void fsm_automatic_run_A(){
  80004f4:	4603      	mov	r3, r0
  80004f6:	2b01      	cmp	r3, #1
  80004f8:	d10e      	bne.n	8000518 <fsm_automatic_run_A+0xf4>
-				status = MAN_YELLOW;
+				status_A = MAN_YELLOW;
  80004fa:	4b09      	ldr	r3, [pc, #36]	; (8000520 <fsm_automatic_run_A+0xfc>)
  80004fc:	220d      	movs	r2, #13
  80004fe:	601a      	str	r2, [r3, #0]
@@ -797,7 +797,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  status = INIT;
+  status_A = INIT;
  8000602:	4b09      	ldr	r3, [pc, #36]	; (8000628 <main+0x40>)
  8000604:	2201      	movs	r2, #1
  8000606:	601a      	str	r2, [r3, #0]
@@ -1686,7 +1686,7 @@ void timer_check(){
 void status_LED_A() {
  8000a48:	b480      	push	{r7}
  8000a4a:	af00      	add	r7, sp, #0
-	switch (status) {
+	switch (status_A) {
  8000a4c:	4b31      	ldr	r3, [pc, #196]	; (8000b14 <status_LED_A+0xcc>)
  8000a4e:	681b      	ldr	r3, [r3, #0]
  8000a50:	3b02      	subs	r3, #2

@@ -7,49 +7,44 @@
 
 #include "fsm_automatic.h"
 
-int count_RED = 500;
-int count_GREEN = 300;
-int count_YELLOW = 200;
-
-
 void fsm_automatic_run_A(){
 	status_LED_A();
-	switch (status) {
+	switch (status_A) {
 		case INIT:
-			status = AUTO_RED;
+			status_A = AUTO_RED;
 			setTimer(1, 5000);
 			break;
 		case AUTO_RED:
 
 			displayTraffic();
 			if (timer_flag[1] == 1) {
-				status = AUTO_GREEN;
+				status_A = AUTO_GREEN;
 				setTimer(1, 3000);
 			}
 			if(IsButtonPress(1) == 1){
-				status = MAN_RED;
+				status_A = MAN_RED;
 				setTimer(1,10000);
 			}
 			break;
 		case AUTO_GREEN:
 			displayTraffic();
 			if (timer_flag[1] == 1) {
-				status = AUTO_YELLOW;
+				status_A = AUTO_YELLOW;
 				setTimer(1, 2000);
 			}
 			if(IsButtonPress(1) == 1){
-				status = MAN_GREEN;
+				status_A = MAN_GREEN;
 				setTimer(1,10000);
 			}
 			break;
 		case AUTO_YELLOW:
 			displayTraffic();
 			if (timer_flag[1] == 1) {
-				status = AUTO_RED;
+				status_A = AUTO_RED;
 				setTimer(1, 5000);
 			}
 			if(IsButtonPress(1) == 1){
-				status = MAN_YELLOW;
+				status_A = MAN_YELLOW;
 				setTimer(1,10000);
 			}
 			break;

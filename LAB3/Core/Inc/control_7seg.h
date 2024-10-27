@@ -11,4 +11,7 @@
 extern void display7SEGA(int index);
 extern void display7SEGB(int index);
 
+void update_7seg_A(int index);
+void update_7seg_B(int index);
+
 #endif /* INC_CONTROL_7SEG_H_ */

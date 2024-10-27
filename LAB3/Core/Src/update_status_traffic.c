@@ -8,7 +8,7 @@
 #include "update_status_traffic.h"
 
 void status_LED_A() {
-	switch (status) {
+	switch (status_A) {
 	case AUTO_RED:
 		status_RED_A = 1;
 		status_GREEN_A = 0;

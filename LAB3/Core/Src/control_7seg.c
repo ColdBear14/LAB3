@@ -122,3 +122,37 @@ void display7SEGB(int index){
 	}
 
 }
+
+void update_7seg_A(int index){
+	switch(index){
+	case 0:
+		display7SEGA(buffer_7SEG_A[0]);
+		HAL_GPIO_WritePin(GPIOA, PA11_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, PA12_Pin, SET);
+		break;
+	case 1:
+		display7SEGA(buffer_7SEG_A[1]);
+		HAL_GPIO_WritePin(GPIOA, PA11_Pin, SET);
+		HAL_GPIO_WritePin(GPIOA, PA12_Pin, RESET);
+		break;
+	default:
+		break;
+	}
+}
+
+void update_7seg_B(int index){
+	switch(index){
+	case 0:
+		display7SEGB(buffer_7SEG_B[0]);
+		HAL_GPIO_WritePin(GPIOA, PA13_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, PA14_Pin, SET);
+		break;
+	case 1:
+		display7SEGB(buffer_7SEG_B[1]);
+		HAL_GPIO_WritePin(GPIOA, PA13_Pin, SET);
+		HAL_GPIO_WritePin(GPIOA, PA14_Pin, RESET);
+		break;
+	default:
+		break;
+	}
+}

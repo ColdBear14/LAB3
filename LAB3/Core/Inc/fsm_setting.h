@@ -10,6 +10,7 @@
 
 #include "main.h"
 
-
+void countPressButton1();
+void fsm_mode();
 
 #endif /* INC_FSM_SETTING_H_ */
