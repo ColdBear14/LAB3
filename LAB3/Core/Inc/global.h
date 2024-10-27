@@ -21,7 +21,13 @@
 #define MAN_YELLOW 13
 #define MAN_GREEN 14
 
+#define MODE1 21
+#define MODE2 22
+#define MODE3 23
+#define MODE4 24
+
 extern int status;
 extern int status_B;
+extern int status_mode;
 
 #endif /* INC_GLOBAL_H_ */

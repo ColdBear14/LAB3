@@ -1,2 +1,1 @@
-control_traffic.c:27:6:displayTraffic	8	static
-control_traffic.c:62:6:updateTraffic	8	static
+control_traffic.c:19:6:displayTraffic	8	static

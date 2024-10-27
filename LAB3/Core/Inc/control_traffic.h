@@ -8,23 +8,17 @@
 #ifndef INC_CONTROL_TRAFFIC_H_
 #define INC_CONTROL_TRAFFIC_H_
 
-extern int count_RED_A;
-extern int count_YELLOW_A;
-extern int count_GREEN_A;
+#include "main.h"
 
-extern int status_RED_A;
-extern int status_YELLOW_A;
-extern int status_GREEN_A;
+int status_RED_A;
+int status_GREEN_A;
+int status_YELLOW_A;
 
-extern int status_RED_B;
-extern int status_YELLOW_B;
-extern int status_GREEN_B;
-
-extern int count_RED_B;
-extern int count_YELLOW_B;
-extern int count_GREEN_B;
+int status_RED_B;
+int status_GREEN_B;
+int status_YELLOW_B;
 
 extern void displayTraffic();
-extern void updateTraffic();
+
 
 #endif /* INC_CONTROL_TRAFFIC_H_ */

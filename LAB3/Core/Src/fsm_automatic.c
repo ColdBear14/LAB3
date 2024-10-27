@@ -37,7 +37,7 @@ void fsm_automatic_run_A(){
 				status = AUTO_YELLOW;
 				setTimer(1, 2000);
 			}
-			if(IsButtonPress(2) == 1){
+			if(IsButtonPress(1) == 1){
 				status = MAN_GREEN;
 				setTimer(1,10000);
 			}
@@ -48,7 +48,7 @@ void fsm_automatic_run_A(){
 				status = AUTO_RED;
 				setTimer(1, 5000);
 			}
-			if(IsButtonPress(3) == 1){
+			if(IsButtonPress(1) == 1){
 				status = MAN_YELLOW;
 				setTimer(1,10000);
 			}

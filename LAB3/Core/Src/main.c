@@ -103,8 +103,7 @@ int main(void)
     /* USER CODE END WHILE */
 	  timer_check();
 	  fsm_automatic_run();
-	  fsm_manual_run();
-	  /* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -206,7 +205,8 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
                           |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin
-                          |PA13_Pin|PA14_Pin|PA15_Pin, GPIO_PIN_RESET);
+                          |PA11_Pin|PA12_Pin|PA13_Pin|PA14_Pin
+                          |PA15_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, PB0_Pin|PB1_Pin|PB2_Pin|PB10_Pin
@@ -228,10 +228,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PA3_Pin PA4_Pin PA5_Pin PA6_Pin
                            PA7_Pin PA8_Pin PA9_Pin PA10_Pin
-                           PA13_Pin PA14_Pin PA15_Pin */
+                           PA11_Pin PA12_Pin PA13_Pin PA14_Pin
+                           PA15_Pin */
   GPIO_InitStruct.Pin = PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
                           |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin
-                          |PA13_Pin|PA14_Pin|PA15_Pin;
+                          |PA11_Pin|PA12_Pin|PA13_Pin|PA14_Pin
+                          |PA15_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
