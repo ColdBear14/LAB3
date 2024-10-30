@@ -44,14 +44,9 @@ void status_LED_A() {
 	}
 }
 
-void status_LED_B() {
+void status_LED_B(){
 	switch (status_B) {
 	case AUTO_RED:
-		status_RED_B = 1;
-		status_GREEN_B = 0;
-		status_YELLOW_B = 0;
-		break;
-	case MAN_RED:
 		status_RED_B = 1;
 		status_GREEN_B = 0;
 		status_YELLOW_B = 0;
@@ -61,15 +56,20 @@ void status_LED_B() {
 		status_GREEN_B = 1;
 		status_YELLOW_B = 0;
 		break;
-	case MAN_GREEN:
-		status_RED_B = 0;
-		status_GREEN_B = 1;
-		status_YELLOW_B = 0;
-		break;
 	case AUTO_YELLOW:
 		status_RED_B = 0;
 		status_GREEN_B = 0;
 		status_YELLOW_B = 1;
+		break;
+	case MAN_RED:
+		status_RED_B = 1;
+		status_GREEN_B = 0;
+		status_YELLOW_B = 0;
+		break;
+	case MAN_GREEN:
+		status_RED_B = 0;
+		status_GREEN_B = 1;
+		status_YELLOW_B = 0;
 		break;
 	case MAN_YELLOW:
 		status_RED_B = 0;
@@ -80,3 +80,5 @@ void status_LED_B() {
 		break;
 	}
 }
+
+

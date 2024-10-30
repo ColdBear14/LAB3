@@ -12,4 +12,7 @@
 
 
 void fsm_manual_run();
+void fsm_manual_run_A();
+void fsm_manual_run_B();
+
 #endif /* INC_FSM_MANUAL_H_ */

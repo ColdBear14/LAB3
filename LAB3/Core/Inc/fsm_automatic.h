@@ -10,8 +10,8 @@
 
 #include "global.h"
 
-void status_LED_A();
-void status_LED_B();
+void status_LEDA();
+void status_LEDB();
 
 void fsm_automatic_run_A();
 void fsm_automatic_run_B();

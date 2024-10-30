@@ -12,19 +12,22 @@
 #include "main.h"
 
 
-#define INIT 1
-#define AUTO_RED 2
-#define AUTO_YELLOW 3
-#define AUTO_GREEN 4
+#define MODE0 0
+#define MODE1 1
+#define MODE2 2
+#define MODE3 3
+#define MODE4 4
 
-#define MAN_RED 12
-#define MAN_YELLOW 13
-#define MAN_GREEN 14
+#define INIT 11
+#define AUTO_RED 12
+#define AUTO_YELLOW 13
+#define AUTO_GREEN 14
 
-#define MODE1 21
-#define MODE2 22
-#define MODE3 23
-#define MODE4 24
+#define MAN_RED 22
+#define MAN_YELLOW 23
+#define MAN_GREEN 24
+
+
 
 extern int status_A;
 extern int status_B;

@@ -22,7 +22,6 @@ void fsm_automatic_run_A(){
 			}
 			if(IsButtonPress(1) == 1){
 				status_A = MAN_RED;
-				setTimer(1,10000);
 			}
 			break;
 		case AUTO_GREEN:
@@ -32,8 +31,7 @@ void fsm_automatic_run_A(){
 				setTimer(1, 2000);
 			}
 			if(IsButtonPress(1) == 1){
-				status_A = MAN_GREEN;
-				setTimer(1,10000);
+				status_A = MAN_RED;
 			}
 			break;
 		case AUTO_YELLOW:
@@ -43,8 +41,7 @@ void fsm_automatic_run_A(){
 				setTimer(1, 5000);
 			}
 			if(IsButtonPress(1) == 1){
-				status_A = MAN_YELLOW;
-				setTimer(1,10000);
+				status_A = MAN_RED;
 			}
 			break;
 		default:

@@ -9,4 +9,4 @@
 
 int status_A = 0;
 int status_B = 0;
-int status_mode = MODE1;
+int status_mode = MODE0;

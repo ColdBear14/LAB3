@@ -6,7 +6,7 @@
  */
 #include "fsm_7seg.h"
 
-int countDown=5;
+int countDownA=5;
 int countDownB=3;
 
 void fsm_7seg_run() {
@@ -21,32 +21,32 @@ void fsm_automatic_7segA() {
 		setTimer(5, 1000);
 		break;
 	case AUTO_RED:
-		if (countDown <= 0) {
-			countDown = 3;
+		if (countDownA <= 0) {
+			countDownA = 3;
 		}
 		if (timer_flag[5] == 1) {
-			display7SEGA(countDown);
-			countDown--;
+			display7SEGA(countDownA);
+			countDownA--;
 			setTimer(5, 1000);
 		}
 		break;
 	case AUTO_GREEN:
-		if (countDown <= 0){
-			countDown=2;
+		if (countDownA <= 0){
+			countDownA=2;
 		}
 		if (timer_flag[5] == 1) {
-			display7SEGA(countDown);
-			countDown--;
+			display7SEGA(countDownA);
+			countDownA--;
 			setTimer(5, 1000);
 		}
 		break;
 	case AUTO_YELLOW:
-		if (countDown <= 0) {
-			countDown = 5;
+		if (countDownA <= 0) {
+			countDownA = 5;
 		}
 		if (timer_flag[5] == 1) {
-			display7SEGA(countDown);
-			countDown--;
+			display7SEGA(countDownA);
+			countDownA--;
 			setTimer(5, 1000);
 		}
 		break;
