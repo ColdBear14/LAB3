@@ -15,7 +15,6 @@ void fsm_automatic_run_A(){
 			setTimer(1, 5000);
 			break;
 		case AUTO_RED:
-
 			displayTraffic();
 			if (timer_flag[1] == 1) {
 				status_A = AUTO_GREEN;

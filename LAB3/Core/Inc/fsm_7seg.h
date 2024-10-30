@@ -9,12 +9,14 @@
 #define INC_FSM_7SEG_H_
 #include "main.h"
 
-int countDownRED;
-int countDownGREEN;
-int countDownYELLOW;
+int countDown;
+int countDownB;
 
 void fsm_7seg_run();
 void fsm_automatic_7segA();
+void fsm_automatic_7segB();
+
+
 
 
 #endif /* INC_FSM_7SEG_H_ */

@@ -6,45 +6,94 @@
  */
 #include "fsm_7seg.h"
 
-int countDownRED = 6;
-int countDownGREEN = 4;
-int countDownYELLOW = 3;
+int countDown=5;
+int countDownB=3;
 
-void fsm_7seg_run(){
+void fsm_7seg_run() {
 	fsm_automatic_7segA();
+	fsm_automatic_7segB();
 }
 
-void fsm_automatic_7segA(){
-	if(status_A == AUTO_RED){
-		display7SEGA(countDownRED);
-		if(timer_flag[5]==1){
-			if(countDownRED <= 0) {
-				countDownRED = 6;
-			}
-			countDownRED--;
-			setTimer(5,1000);
+void fsm_automatic_7segA() {
+	switch (status_A) {
+	case INIT:
+		status_A = AUTO_RED;
+		setTimer(5, 1000);
+		break;
+	case AUTO_RED:
+		if (countDown <= 0) {
+			countDown = 3;
 		}
+		if (timer_flag[5] == 1) {
+			display7SEGA(countDown);
+			countDown--;
+			setTimer(5, 1000);
+		}
+		break;
+	case AUTO_GREEN:
+		if (countDown <= 0){
+			countDown=2;
+		}
+		if (timer_flag[5] == 1) {
+			display7SEGA(countDown);
+			countDown--;
+			setTimer(5, 1000);
+		}
+		break;
+	case AUTO_YELLOW:
+		if (countDown <= 0) {
+			countDown = 5;
+		}
+		if (timer_flag[5] == 1) {
+			display7SEGA(countDown);
+			countDown--;
+			setTimer(5, 1000);
+		}
+		break;
+	default:
+		break;
+
 	}
-	if(status_A == AUTO_GREEN){
-		display7SEGA(countDownGREEN);
-		if(timer_flag[5]==1){
-			if(countDownGREEN <= 0) {
-				countDownGREEN = 4;
-			}
-			countDownGREEN--;
-			setTimer(5,1000);
+}
+
+void fsm_automatic_7segB() {
+	switch (status_B) {
+	case INIT:
+		status_B = AUTO_GREEN;
+		setTimer(6, 1000);
+		break;
+	case AUTO_GREEN:
+		if (countDownB <= 0) {
+			countDownB = 2;
 		}
-	}
-	if(status_A == AUTO_YELLOW){
-		display7SEGA(countDownYELLOW);
-		if(timer_flag[5]==1){
-			if(countDownYELLOW <= 0) {
-				countDownYELLOW = 3;
-			}
-			countDownYELLOW--;
-			setTimer(5,1000);
+		if (timer_flag[6] == 1) {
+			display7SEGB(countDownB);
+			countDownB--;
+			setTimer(6, 1000);
 		}
+		break;
+	case AUTO_YELLOW:
+		if (countDownB <= 0) {
+			countDownB = 5;
+		}
+		if (timer_flag[6] == 1) {
+			display7SEGB(countDownB);
+			countDownB--;
+			setTimer(6, 1000);
+		}
+		break;
+	case AUTO_RED:
+		if (countDownB <= 0) {
+			countDownB = 3;
+		}
+		if (timer_flag[6] == 1) {
+			display7SEGB(countDownB);
+			countDownB--;
+			setTimer(6, 1000);
+		}
+		break;
+	default:
+		break;
 	}
 
 }
-

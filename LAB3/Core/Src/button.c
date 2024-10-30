@@ -24,13 +24,6 @@ int IsButtonPress(int index) {
 	return 0;
 }
 
-int IsButtonLongPress(int index) {
-	if (button_LongPress_flag[index] == 1) {
-		button_LongPress_flag[index] = 0;
-		return 1;
-	}
-	return 0;
-}
 
 void subKeyProcess(int index) {
 	button_flag[index] = 1;
