@@ -96,13 +96,16 @@ int main(void)
 
   status_A = INIT;
   status_B= INIT;
+
   setTimer(0,1000);
+
 
   while (1)
   {
     /* USER CODE END WHILE */
 	  timer_check();
 	  fsm_automatic_run();
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

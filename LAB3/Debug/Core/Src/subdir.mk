@@ -20,7 +20,6 @@ C_SRCS += \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f1xx.c \
 ../Core/Src/timer_check.c \
-../Core/Src/traffic_buffer.c \
 ../Core/Src/update_status_traffic.c 
 
 OBJS += \
@@ -39,7 +38,6 @@ OBJS += \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f1xx.o \
 ./Core/Src/timer_check.o \
-./Core/Src/traffic_buffer.o \
 ./Core/Src/update_status_traffic.o 
 
 C_DEPS += \
@@ -58,7 +56,6 @@ C_DEPS += \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f1xx.d \
 ./Core/Src/timer_check.d \
-./Core/Src/traffic_buffer.d \
 ./Core/Src/update_status_traffic.d 
 
 

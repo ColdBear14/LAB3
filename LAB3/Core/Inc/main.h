@@ -40,7 +40,6 @@ extern "C" {
 #include "timer_check.h"
 #include "update_status_traffic.h"
 #include "fsm_manual.h"
-#include "traffic_buffer.h"
 #include "fsm_setting.h"
 /* USER CODE END Includes */
 

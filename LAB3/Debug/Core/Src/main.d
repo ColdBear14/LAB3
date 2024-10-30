@@ -27,8 +27,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/control_traffic.h ../Core/Inc/main.h ../Core/Inc/button.h \
  ../Core/Inc/fsm_automatic.h ../Core/Inc/global.h \
  ../Core/Inc/timer_check.h ../Core/Inc/update_status_traffic.h \
- ../Core/Inc/fsm_manual.h ../Core/Inc/traffic_buffer.h \
- ../Core/Inc/fsm_setting.h
+ ../Core/Inc/fsm_manual.h ../Core/Inc/fsm_setting.h
 
 ../Core/Inc/main.h:
 
@@ -99,7 +98,5 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/update_status_traffic.h:
 
 ../Core/Inc/fsm_manual.h:
-
-../Core/Inc/traffic_buffer.h:
 
 ../Core/Inc/fsm_setting.h:
