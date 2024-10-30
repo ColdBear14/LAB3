@@ -41,6 +41,7 @@ extern "C" {
 #include "update_status_traffic.h"
 #include "fsm_manual.h"
 #include "fsm_setting.h"
+#include "fsm_7seg.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

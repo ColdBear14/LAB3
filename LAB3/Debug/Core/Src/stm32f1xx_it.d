@@ -28,7 +28,7 @@ Core/Src/stm32f1xx_it.o: ../Core/Src/stm32f1xx_it.c ../Core/Inc/main.h \
  ../Core/Inc/fsm_automatic.h ../Core/Inc/global.h \
  ../Core/Inc/timer_check.h ../Core/Inc/update_status_traffic.h \
  ../Core/Inc/fsm_manual.h ../Core/Inc/fsm_setting.h \
- ../Core/Inc/stm32f1xx_it.h
+ ../Core/Inc/fsm_7seg.h ../Core/Inc/stm32f1xx_it.h
 
 ../Core/Inc/main.h:
 
@@ -101,5 +101,7 @@ Core/Src/stm32f1xx_it.o: ../Core/Src/stm32f1xx_it.c ../Core/Inc/main.h \
 ../Core/Inc/fsm_manual.h:
 
 ../Core/Inc/fsm_setting.h:
+
+../Core/Inc/fsm_7seg.h:
 
 ../Core/Inc/stm32f1xx_it.h:

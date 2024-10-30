@@ -8,6 +8,7 @@ C_SRCS += \
 ../Core/Src/button.c \
 ../Core/Src/control_7seg.c \
 ../Core/Src/control_traffic.c \
+../Core/Src/fsm_7seg.c \
 ../Core/Src/fsm_automatic.c \
 ../Core/Src/fsm_manual.c \
 ../Core/Src/fsm_setting.c \
@@ -26,6 +27,7 @@ OBJS += \
 ./Core/Src/button.o \
 ./Core/Src/control_7seg.o \
 ./Core/Src/control_traffic.o \
+./Core/Src/fsm_7seg.o \
 ./Core/Src/fsm_automatic.o \
 ./Core/Src/fsm_manual.o \
 ./Core/Src/fsm_setting.o \
@@ -44,6 +46,7 @@ C_DEPS += \
 ./Core/Src/button.d \
 ./Core/Src/control_7seg.d \
 ./Core/Src/control_traffic.d \
+./Core/Src/fsm_7seg.d \
 ./Core/Src/fsm_automatic.d \
 ./Core/Src/fsm_manual.d \
 ./Core/Src/fsm_setting.d \

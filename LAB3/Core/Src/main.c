@@ -105,6 +105,7 @@ int main(void)
     /* USER CODE END WHILE */
 	  timer_check();
 	  fsm_automatic_run();
+	  fsm_7seg_run();
 
     /* USER CODE BEGIN 3 */
   }

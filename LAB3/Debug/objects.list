@@ -1,6 +1,7 @@
 "./Core/Src/button.o"
 "./Core/Src/control_7seg.o"
 "./Core/Src/control_traffic.o"
+"./Core/Src/fsm_7seg.o"
 "./Core/Src/fsm_automatic.o"
 "./Core/Src/fsm_manual.o"
 "./Core/Src/fsm_setting.o"
