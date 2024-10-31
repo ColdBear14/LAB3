@@ -12,6 +12,10 @@
 extern int countDownA;
 extern int countDownB;
 
+extern int count_RED;
+extern int count_GREEN;
+extern int count_YELLOW;
+
 extern void fsm_7seg_run();
 extern void fsm_7segA();
 extern void fsm_7segB();

@@ -10,9 +10,6 @@
 
 #include "global.h"
 
-extern int count_RED;
-extern int count_GREEN;
-extern int count_YELLOW;
 int countTemp;
 
 void countPressButton1();

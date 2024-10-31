@@ -10,12 +10,21 @@
 int buffer_indexA[2];
 int buffer_indexB[2];
 
+
+
 void display7SEGA(int index) {
+
+
 	switch (index) {
 	case 0:
+		HAL_GPIO_WritePin(GPIOB, PB0_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB1_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB2_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB3_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB4_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB5_Pin, RESET);
 		HAL_GPIO_WritePin(GPIOB, PB6_Pin, SET);
-		HAL_GPIO_WritePin(GPIOB, PB0_Pin | PB1_Pin | PB2_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB4_Pin | PB5_Pin, RESET);
+
 		break;
 	case 1:
 		HAL_GPIO_WritePin(GPIOB, PB6_Pin | PB0_Pin, SET);
@@ -53,9 +62,7 @@ void display7SEGA(int index) {
 		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB4_Pin | PB5_Pin, SET);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(GPIOB, PB6_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB0_Pin | PB1_Pin | PB2_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB4_Pin | PB5_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB4_Pin | PB5_Pin, SET);
 		break;
 	case 9:
 		HAL_GPIO_WritePin(GPIOB, PB4_Pin, SET);
@@ -69,6 +76,8 @@ void display7SEGA(int index) {
 }
 
 void display7SEGB(int index) {
+
+
 	switch (index) {
 	case 0:
 		HAL_GPIO_WritePin(GPIOB, PB13_Pin, SET);
@@ -111,9 +120,7 @@ void display7SEGB(int index) {
 		HAL_GPIO_WritePin(GPIOB, PB10_Pin | PB11_Pin | PB12_Pin, SET);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(GPIOB, PB13_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB7_Pin | PB8_Pin | PB9_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB10_Pin | PB11_Pin | PB12_Pin, RESET);
+
 		break;
 	case 9:
 		HAL_GPIO_WritePin(GPIOB, PB11_Pin, SET);

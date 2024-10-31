@@ -96,7 +96,7 @@ int main(void)
   status_A = INIT;
   status_B= INIT;
 
-  setTimer(0,500);
+  setTimer(0,250);
 
   while (1)
   {

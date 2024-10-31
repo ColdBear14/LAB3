@@ -7,9 +7,7 @@
 
 #include "fsm_setting.h"
 
-int count_RED = 5 ;
-int count_GREEN = 3 ;
-int count_YELLOW = 2 ;
+
 
 int countTemp = 0 ;
 
@@ -59,7 +57,6 @@ void fsm_mode(){
 		status_B = MAN_YELLOW;
 		if(IsButtonPress(1) == 1){
 			status_mode = MODE4;
-
 		}
 		if(IsButtonPress(2) == 1){
 			// add value

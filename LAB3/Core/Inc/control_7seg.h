@@ -11,6 +11,8 @@
 extern int buffer_indexA[2];
 extern int buffer_indexB[2];
 
+void clear();
+
 extern void display7SEGA(int index);
 extern void display7SEGB(int index);
 

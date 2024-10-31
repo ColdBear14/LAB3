@@ -12,8 +12,6 @@ int YELLOW_Timer = 2000;
 int GREEN_Timer = 3000;
 
 
-
-
 void fsm_automatic_run_A(){
 	status_LED_A();
 	switch (status_A) {

@@ -19,6 +19,6 @@ extern int IsButtonPress(int index);
 extern void subKeyProcess(int index);
 int getIndex(int index);
 
-void getKeyInput();
+extern void getKeyInput();
 
 #endif /* INC_BUTTON_H_ */

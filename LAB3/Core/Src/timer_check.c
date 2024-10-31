@@ -13,7 +13,7 @@ void timer_check(){
 		HAL_GPIO_TogglePin(GPIOA, PA4_Pin);
 		update_7seg_A();
 		update_7seg_B();
-		setTimer(0,500);
+		setTimer(0,250);
 		if(switch_7seg == 3) switch_7seg = 0;
 		switch_7seg++;
 	}
