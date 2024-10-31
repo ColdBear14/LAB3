@@ -7,14 +7,14 @@
 
 #ifndef INC_FSM_7SEG_H_
 #define INC_FSM_7SEG_H_
-#include "main.h"
+#include "global.h"
 
 extern int countDownA;
 extern int countDownB;
 
-void fsm_7seg_run();
-void fsm_automatic_7segA();
-void fsm_automatic_7segB();
+extern void fsm_7seg_run();
+extern void fsm_7segA();
+extern void fsm_7segB();
 
 
 

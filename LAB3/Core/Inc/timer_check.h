@@ -10,5 +10,6 @@
 #include "main.h"
 #include "software_timer.h"
 
+int switch_7seg;
 extern void timer_check();
 #endif /* INC_TIMER_CHECK_H_ */

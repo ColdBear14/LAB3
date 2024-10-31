@@ -6,6 +6,7 @@
  */
 
 #include "timer_check.h"
+int switch_7seg=0;
 
 void timer_check(){
 	if(timer_flag[0] == 1){
@@ -13,5 +14,7 @@ void timer_check(){
 		update_7seg_A();
 		update_7seg_B();
 		setTimer(0,500);
+		if(switch_7seg == 3) switch_7seg = 0;
+		switch_7seg++;
 	}
 }

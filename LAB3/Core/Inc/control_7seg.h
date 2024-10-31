@@ -8,8 +8,8 @@
 #ifndef INC_CONTROL_7SEG_H_
 #define INC_CONTROL_7SEG_H_
 
-int buffer_index[2];
-int index_led ;
+extern int buffer_indexA[2];
+extern int buffer_indexB[2];
 
 extern void display7SEGA(int index);
 extern void display7SEGB(int index);

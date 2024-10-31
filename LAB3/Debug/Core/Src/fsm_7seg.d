@@ -1,5 +1,6 @@
 Core/Src/fsm_7seg.o: ../Core/Src/fsm_7seg.c ../Core/Inc/fsm_7seg.h \
- ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+ ../Core/Inc/global.h ../Core/Inc/main.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -25,12 +26,13 @@ Core/Src/fsm_7seg.o: ../Core/Src/fsm_7seg.c ../Core/Inc/fsm_7seg.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/software_timer.h ../Core/Inc/control_7seg.h \
  ../Core/Inc/control_traffic.h ../Core/Inc/button.h \
- ../Core/Inc/fsm_automatic.h ../Core/Inc/global.h \
- ../Core/Inc/timer_check.h ../Core/Inc/update_status_traffic.h \
- ../Core/Inc/fsm_manual.h ../Core/Inc/fsm_setting.h \
- ../Core/Inc/fsm_7seg.h
+ ../Core/Inc/fsm_automatic.h ../Core/Inc/timer_check.h \
+ ../Core/Inc/update_status_traffic.h ../Core/Inc/fsm_manual.h \
+ ../Core/Inc/fsm_setting.h ../Core/Inc/fsm_7seg.h
 
 ../Core/Inc/fsm_7seg.h:
+
+../Core/Inc/global.h:
 
 ../Core/Inc/main.h:
 
@@ -91,8 +93,6 @@ Core/Src/fsm_7seg.o: ../Core/Src/fsm_7seg.c ../Core/Inc/fsm_7seg.h \
 ../Core/Inc/button.h:
 
 ../Core/Inc/fsm_automatic.h:
-
-../Core/Inc/global.h:
 
 ../Core/Inc/timer_check.h:
 

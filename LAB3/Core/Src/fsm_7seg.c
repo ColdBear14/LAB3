@@ -6,17 +6,10 @@
  */
 #include "fsm_7seg.h"
 
-int countDownA = 5;
-int countDownB = 3;
+int countDownA;
+int countDownB;
 
-void fsm_7seg_run() {
-	fsm_automatic_7segA();
-	fsm_automatic_7segB();
-}
-
-
-
-void fsm_automatic_7segA() {
+void fsm_7segA() {
 	switch (status_A) {
 	case INIT:
 		status_A = AUTO_RED;
@@ -24,7 +17,7 @@ void fsm_automatic_7segA() {
 		break;
 	case AUTO_RED:
 		if (countDownA <= 0) {
-			countDownA = 3;
+			countDownA = count_GREEN;
 		}
 		if (timer_flag[5] == 1) {
 			update_indexA(countDownA);
@@ -34,7 +27,7 @@ void fsm_automatic_7segA() {
 		break;
 	case AUTO_GREEN:
 		if (countDownA <= 0) {
-			countDownA = 2;
+			countDownA = count_YELLOW;
 		}
 		if (timer_flag[5] == 1) {
 			update_indexA(countDownA);
@@ -44,7 +37,7 @@ void fsm_automatic_7segA() {
 		break;
 	case AUTO_YELLOW:
 		if (countDownA <= 0) {
-			countDownA = 5;
+			countDownA = count_RED;
 		}
 		if (timer_flag[5] == 1) {
 			update_indexA(countDownA);
@@ -59,7 +52,7 @@ void fsm_automatic_7segA() {
 
 }
 
-void fsm_automatic_7segB() {
+void fsm_7segB() {
 	switch (status_B) {
 	case INIT:
 		status_B = AUTO_GREEN;
@@ -67,7 +60,7 @@ void fsm_automatic_7segB() {
 		break;
 	case AUTO_GREEN:
 		if (countDownB <= 0) {
-			countDownB = 2;
+			countDownB = count_YELLOW;
 		}
 		if (timer_flag[6] == 1) {
 			update_indexB(countDownB);
@@ -77,7 +70,7 @@ void fsm_automatic_7segB() {
 		break;
 	case AUTO_YELLOW:
 		if (countDownB <= 0) {
-			countDownB = 5;
+			countDownB = count_RED;
 		}
 		if (timer_flag[6] == 1) {
 			update_indexB(countDownB);
@@ -87,7 +80,7 @@ void fsm_automatic_7segB() {
 		break;
 	case AUTO_RED:
 		if (countDownB <= 0) {
-			countDownB = 3;
+			countDownB = count_GREEN;
 		}
 		if (timer_flag[6] == 1) {
 			update_indexB(countDownB);
@@ -98,5 +91,9 @@ void fsm_automatic_7segB() {
 	default:
 		break;
 	}
+}
 
+void fsm_7seg_run() {
+	fsm_7segA();
+	fsm_7segB();
 }

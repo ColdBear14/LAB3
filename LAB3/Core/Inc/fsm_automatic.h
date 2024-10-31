@@ -10,11 +10,16 @@
 
 #include "global.h"
 
-void status_LEDA();
-void status_LEDB();
 
-void fsm_automatic_run_A();
-void fsm_automatic_run_B();
-void fsm_automatic_run();
+extern int RED_Timer ;
+extern int YELLOW_Timer ;
+extern int GREEN_Timer ;
+
+extern void status_LEDA();
+extern void status_LEDB();
+
+extern void fsm_automatic_run_A();
+extern void fsm_automatic_run_B();
+extern void fsm_automatic_run();
 
 #endif /* INC_FSM_AUTOMATIC_H_ */

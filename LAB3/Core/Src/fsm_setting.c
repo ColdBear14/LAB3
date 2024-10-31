@@ -7,6 +7,12 @@
 
 #include "fsm_setting.h"
 
+int count_RED = 5 ;
+int count_GREEN = 3 ;
+int count_YELLOW = 2 ;
+
+int countTemp = 0 ;
+
 void countPressButton1(){
 	if(IsButtonPress(1) == 1){
 		status_mode++;
@@ -23,17 +29,12 @@ void fsm_mode(){
 		status_mode = MODE1;
 		status_A = INIT;
 		status_B = INIT;
+		countDownA=count_RED;
+		countDownB=count_GREEN;
 		break;
 	case MODE1:
-
 		if(IsButtonPress(1) == 1){
 			status_mode = MODE2;
-		}
-		if(IsButtonPress(2) == 1){
-			// add value
-		}
-		if(IsButtonPress(3) == 1){
-			//set value
 		}
 		break;
 	case MODE2:
@@ -44,9 +45,13 @@ void fsm_mode(){
 		}
 		if(IsButtonPress(2) == 1){
 			// add value
+			countTemp+=2;
 		}
 		if(IsButtonPress(3) == 1){
 			//set value
+			RED_Timer = RED_Timer + countTemp*1000;
+			count_RED += countTemp;
+			countTemp=0;
 		}
 		break;
 	case MODE3:
@@ -54,12 +59,17 @@ void fsm_mode(){
 		status_B = MAN_YELLOW;
 		if(IsButtonPress(1) == 1){
 			status_mode = MODE4;
+
 		}
 		if(IsButtonPress(2) == 1){
 			// add value
+			countTemp+=2;
 		}
 		if(IsButtonPress(3) == 1){
 			//set value
+			YELLOW_Timer = YELLOW_Timer + countTemp*1000;
+			count_YELLOW += countTemp;
+			countTemp=0;
 		}
 		break;
 	case MODE4:
@@ -70,9 +80,13 @@ void fsm_mode(){
 		}
 		if(IsButtonPress(2) == 1){
 			// add value
+			countTemp+=2;
 		}
 		if(IsButtonPress(3) == 1){
 			//set value
+			GREEN_Timer = GREEN_Timer + countTemp*1000;
+			count_GREEN += countTemp;
+			countTemp=0;
 		}
 		break;
 	default:

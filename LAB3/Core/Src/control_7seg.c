@@ -147,13 +147,13 @@ void update_indexB(int index) {
 }
 
 void update_7seg_A() {
-	switch (HAL_GPIO_ReadPin(GPIOA, PA4_Pin)) {
-	case 0:
+	switch (switch_7seg) {
+	case 1:
 		display7SEGA(buffer_indexA[1]);
 		HAL_GPIO_WritePin(GPIOA, PA11_Pin, RESET);
 		HAL_GPIO_WritePin(GPIOA, PA12_Pin, SET);
 		break;
-	case 1:
+	case 2:
 		display7SEGA(buffer_indexA[0]);
 		HAL_GPIO_WritePin(GPIOA, PA11_Pin, SET);
 		HAL_GPIO_WritePin(GPIOA, PA12_Pin, RESET);
@@ -164,13 +164,13 @@ void update_7seg_A() {
 }
 
 void update_7seg_B() {
-	switch (HAL_GPIO_ReadPin(GPIOA, PA4_Pin)) {
-	case 0:
+	switch (switch_7seg) {
+	case 1:
 		display7SEGB(buffer_indexB[1]);
 		HAL_GPIO_WritePin(GPIOA, PA13_Pin, RESET);
 		HAL_GPIO_WritePin(GPIOA, PA14_Pin, SET);
 		break;
-	case 1:
+	case 2:
 		display7SEGB(buffer_indexB[0]);
 		HAL_GPIO_WritePin(GPIOA, PA13_Pin, SET);
 		HAL_GPIO_WritePin(GPIOA, PA14_Pin, RESET);

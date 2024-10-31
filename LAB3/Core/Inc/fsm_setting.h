@@ -8,9 +8,14 @@
 #ifndef INC_FSM_SETTING_H_
 #define INC_FSM_SETTING_H_
 
-#include "main.h"
+#include "global.h"
 
+extern int count_RED;
+extern int count_GREEN;
+extern int count_YELLOW;
+int countTemp;
 
-void fsm_mode();
+void countPressButton1();
+extern void fsm_mode();
 
 #endif /* INC_FSM_SETTING_H_ */
