@@ -20,9 +20,6 @@ void fsm_automatic_run_A(){
 				status_A = AUTO_GREEN;
 				setTimer(1, 3000);
 			}
-			if(IsButtonPress(1) == 1){
-				status_A = MAN_RED;
-			}
 			break;
 		case AUTO_GREEN:
 			displayTraffic();
@@ -30,18 +27,13 @@ void fsm_automatic_run_A(){
 				status_A = AUTO_YELLOW;
 				setTimer(1, 2000);
 			}
-			if(IsButtonPress(1) == 1){
-				status_A = MAN_RED;
-			}
+
 			break;
 		case AUTO_YELLOW:
 			displayTraffic();
 			if (timer_flag[1] == 1) {
 				status_A = AUTO_RED;
 				setTimer(1, 5000);
-			}
-			if(IsButtonPress(1) == 1){
-				status_A = MAN_RED;
 			}
 			break;
 		default:
@@ -62,6 +54,7 @@ void fsm_automatic_run_B(){
 				status_B = AUTO_YELLOW;
 				setTimer(2, 2000);
 			}
+
 			break;
 		case AUTO_YELLOW:
 			displayTraffic();
@@ -69,6 +62,7 @@ void fsm_automatic_run_B(){
 				status_B = AUTO_RED;
 				setTimer(2, 5000);
 			}
+
 			break;
 		case AUTO_RED:
 			displayTraffic();
@@ -76,6 +70,7 @@ void fsm_automatic_run_B(){
 				status_B = AUTO_GREEN;
 				setTimer(2, 3000);
 			}
+
 			break;
 		default:
 			break;

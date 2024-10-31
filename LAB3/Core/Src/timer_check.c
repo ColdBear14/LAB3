@@ -10,6 +10,8 @@
 void timer_check(){
 	if(timer_flag[0] == 1){
 		HAL_GPIO_TogglePin(GPIOA, PA4_Pin);
-		setTimer(0,1000);
+		update_7seg_A();
+		update_7seg_B();
+		setTimer(0,500);
 	}
 }

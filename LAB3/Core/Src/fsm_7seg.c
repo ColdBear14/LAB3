@@ -6,13 +6,15 @@
  */
 #include "fsm_7seg.h"
 
-int countDownA=5;
-int countDownB=3;
+int countDownA = 5;
+int countDownB = 3;
 
 void fsm_7seg_run() {
 	fsm_automatic_7segA();
 	fsm_automatic_7segB();
 }
+
+
 
 void fsm_automatic_7segA() {
 	switch (status_A) {
@@ -25,17 +27,17 @@ void fsm_automatic_7segA() {
 			countDownA = 3;
 		}
 		if (timer_flag[5] == 1) {
-			display7SEGA(countDownA);
+			update_indexA(countDownA);
 			countDownA--;
 			setTimer(5, 1000);
 		}
 		break;
 	case AUTO_GREEN:
-		if (countDownA <= 0){
-			countDownA=2;
+		if (countDownA <= 0) {
+			countDownA = 2;
 		}
 		if (timer_flag[5] == 1) {
-			display7SEGA(countDownA);
+			update_indexA(countDownA);
 			countDownA--;
 			setTimer(5, 1000);
 		}
@@ -45,15 +47,16 @@ void fsm_automatic_7segA() {
 			countDownA = 5;
 		}
 		if (timer_flag[5] == 1) {
-			display7SEGA(countDownA);
+			update_indexA(countDownA);
 			countDownA--;
 			setTimer(5, 1000);
 		}
 		break;
+
 	default:
 		break;
-
 	}
+
 }
 
 void fsm_automatic_7segB() {
@@ -67,7 +70,7 @@ void fsm_automatic_7segB() {
 			countDownB = 2;
 		}
 		if (timer_flag[6] == 1) {
-			display7SEGB(countDownB);
+			update_indexB(countDownB);
 			countDownB--;
 			setTimer(6, 1000);
 		}
@@ -77,7 +80,7 @@ void fsm_automatic_7segB() {
 			countDownB = 5;
 		}
 		if (timer_flag[6] == 1) {
-			display7SEGB(countDownB);
+			update_indexB(countDownB);
 			countDownB--;
 			setTimer(6, 1000);
 		}
@@ -87,7 +90,7 @@ void fsm_automatic_7segB() {
 			countDownB = 3;
 		}
 		if (timer_flag[6] == 1) {
-			display7SEGB(countDownB);
+			update_indexB(countDownB);
 			countDownB--;
 			setTimer(6, 1000);
 		}

@@ -55,7 +55,6 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 /* USER CODE END 0 */
 
 /**
@@ -97,8 +96,7 @@ int main(void)
   status_A = INIT;
   status_B= INIT;
 
-  setTimer(0,1000);
-
+  setTimer(0,500);
 
   while (1)
   {

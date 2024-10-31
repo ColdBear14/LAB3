@@ -9,8 +9,8 @@
 #define INC_FSM_7SEG_H_
 #include "main.h"
 
-int countDownA;
-int countDownB;
+extern int countDownA;
+extern int countDownB;
 
 void fsm_7seg_run();
 void fsm_automatic_7segA();

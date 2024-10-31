@@ -16,12 +16,15 @@ void fsm_manual_run_A() {
 	switch (status_A) {
 	case MAN_RED:
 		displayTraffic();
+
 		break;
 	case MAN_GREEN:
 		displayTraffic();
+
 		break;
 	case MAN_YELLOW:
 		displayTraffic();
+
 		break;
 	default:
 		break;
@@ -32,12 +35,15 @@ void fsm_manual_run_B() {
 	switch (status_B) {
 	case MAN_RED:
 		displayTraffic();
+
 		break;
 	case MAN_GREEN:
 		displayTraffic();
+
 		break;
 	case MAN_YELLOW:
 		displayTraffic();
+
 		break;
 	default:
 		break;
