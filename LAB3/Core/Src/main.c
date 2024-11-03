@@ -93,11 +93,10 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  status_A = INIT;
-  status_B= INIT;
+//  status_A = INIT;
+//  status_B= INIT;
 
   setTimer(0,250);
-
   while (1)
   {
     /* USER CODE END WHILE */

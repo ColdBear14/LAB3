@@ -62,7 +62,6 @@ void display7SEGA(int index) {
 		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB4_Pin | PB5_Pin, SET);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB4_Pin | PB5_Pin, SET);
 		break;
 	case 9:
 		HAL_GPIO_WritePin(GPIOB, PB4_Pin, SET);

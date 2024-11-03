@@ -32,15 +32,15 @@ void fsm_manual_run_B() {
 	switch (status_B) {
 	case MAN_RED:
 		displayTraffic();
-		update_indexB(countTemp);
+		update_indexB(MODE2);
 		break;
 	case MAN_GREEN:
 		displayTraffic();
-		update_indexB(countTemp);
+		update_indexB(MODE4);
 		break;
 	case MAN_YELLOW:
 		displayTraffic();
-		update_indexB(countTemp);
+		update_indexB(MODE3);
 		break;
 	default:
 		break;

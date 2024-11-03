@@ -13,6 +13,7 @@ int count_RED = 5 ;
 int count_GREEN = 3 ;
 int count_YELLOW = 2 ;
 
+
 void fsm_7segA() {
 	switch (status_A) {
 	case INIT:
